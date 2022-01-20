@@ -135,11 +135,14 @@ body{
     grid-template-columns: 1fr 1fr ;
     gap: 1.5rem;
   }
+  main.container{ 
+    padding-top: 6rem;
+  }
 }
 
 .container{
   width: 100%;
-  max-width: 70em;
+  max-width: 90em;
   min-width: 20em;
   margin: 0 auto;
   padding: 1.5rem;
