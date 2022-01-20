@@ -137,3 +137,40 @@ body{
   }
 }
 
+.container{
+  width: 100%;
+  max-width: 70em;
+  min-width: 20em;
+  margin: 0 auto;
+  padding: 1.5rem;
+  padding-bottom: 0;
+}
+
+header h1{
+  margin: 0;
+}
+
+/* --------------- Media Player --------------- */
+
+#visual{
+  padding: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+#visual img{
+  box-shadow: 0 4px 10px #0006;
+  max-height: 15rem;
+}
+
+.progress-bar{
+  height: 0.225rem;
+  background-color: #eee;
+  border-radius: 1rem;
+  margin: 0 1rem;
+}
+
+.audio-time{
+  display: flex;
+  justify-content: space-between;
+  margin: 0 1rem;
+}
