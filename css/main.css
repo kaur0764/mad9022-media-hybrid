@@ -159,6 +159,15 @@ section{
 
 /* --------------- Media Player --------------- */
 
+#player-area{  
+  color: #fff;
+  border-radius: 0.5rem;
+  text-align: center;
+  padding-top: 1rem;
+  background-image: linear-gradient(to bottom,rgba(255, 255, 255, 0.262) 20%, transparent);
+  height: max-content;
+}
+
 #visual{
   padding: 1rem;
   margin-bottom: 1.5rem;
@@ -180,6 +189,17 @@ section{
   display: flex;
   justify-content: space-between;
   margin: 0 1rem;
+}
+
+@media only screen and (min-width: 48em) {
+  #visual img{
+    max-height: 24rem;
+  }
+}
+@media only screen and (min-width: 56em) {
+  #visual img{
+    max-height: 30rem;
+  }
 }
 
 /* ------------ Buttons ------------- */
