@@ -170,12 +170,13 @@ section{
 
 #visual{
   padding: 1rem;
-  margin-bottom: 1.5rem;
+  padding-bottom: 0;
 }
 
 #visual img{
   box-shadow: 0 4px 10px #0006;
   max-height: 15rem;
+  margin-bottom: 1.5rem;
 }
 
 .progress-bar{
@@ -193,12 +194,7 @@ section{
 
 @media only screen and (min-width: 48em) {
   #visual img{
-    max-height: 24rem;
-  }
-}
-@media only screen and (min-width: 56em) {
-  #visual img{
-    max-height: 30rem;
+    max-height: 22rem;
   }
 }
 
