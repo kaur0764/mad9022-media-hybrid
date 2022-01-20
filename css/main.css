@@ -222,6 +222,17 @@ section{
   display: none; 
 }
 
+@media only screen and (min-width: 25em) {
+  .buttons{
+    margin: 0 0.2rem;
+  }
+}
+
+@media only screen and (min-width: 68em) {
+  .buttons{
+    margin: 0 0.4rem;
+  }
+}
 /* ----------------- Playlist ----------------- */
 
 ol{
