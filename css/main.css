@@ -254,3 +254,7 @@ li img{
 #playlist-area p{
   margin: 0;
 }
+
+#player-audio{
+  display: none;
+}
