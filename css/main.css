@@ -174,3 +174,27 @@ header h1{
   justify-content: space-between;
   margin: 0 1rem;
 }
+
+/* ------------ Buttons ------------- */
+
+.buttons{
+  background-color:transparent;
+  border-color: transparent;
+  color: #eee;
+  border-radius: 50%;
+  padding: 0.1rem;
+}
+
+.buttons .material-icons{
+  font-size: 2rem;
+}
+
+#btnPlayArrow, #btnPause ,#btnStop{
+  background-color: #eee;
+  color: var(--color-primary-dark);
+  padding: 0.3rem;
+}
+
+#btnPause{
+  display: none; 
+}
