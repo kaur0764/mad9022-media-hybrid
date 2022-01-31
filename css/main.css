@@ -180,10 +180,16 @@ section{
 }
 
 .progress-bar{
+  width:calc(100% - 2rem); 
   height: 0.225rem;
   background-color: #eee;
   border-radius: 1rem;
   margin: 0 1rem;
+}
+
+.progress-bar::-webkit-progress-bar {
+  background-color: #eee;
+  border-radius: 1rem;
 }
 
 .audio-time{
@@ -269,3 +275,4 @@ li img{
 #player-audio{
   display: none;
 }
+
