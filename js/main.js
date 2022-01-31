@@ -64,6 +64,7 @@ const PLAY = {
     PLAY.btnToggle() 
     if (!APP.audio.paused) return
     APP.audio.play()
+    ANIMATION.startAnimations()
   },
   btnToggle(){ 
     APP.btnPause.style.display='inline'
@@ -76,6 +77,7 @@ const PAUSE = {
   pauseTrack(ev) {
     PAUSE.btnToggle() 
     APP.audio.pause()
+    ANIMATION.stopAnimations()
   },
   btnToggle(){
     APP.btnPlay.style.display='inline'
@@ -89,6 +91,7 @@ const STOP = {
     PAUSE.btnToggle()
     APP.audio.pause()
     APP.audio.currentTime = 0
+    ANIMATION.stopAnimations()
   }
 }
 
@@ -115,6 +118,14 @@ const ANIMATION = {
     let img = document.querySelector(`li img[src="./${TRACKS[APP.currentTrack].img}"]`)
     let li = img.parentElement
     li.classList.add('active')
+  },
+  startAnimations(){
+    if (!APP.audio.paused) {
+      APP.player.classList.add('is-playing') 
+    }
+  },
+  stopAnimations(){
+    APP.player.classList.remove('is-playing')
   }
 }
 
