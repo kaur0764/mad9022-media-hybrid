@@ -43,21 +43,32 @@ const TIME = {
 /* For anything related to play button and playing track */
 const PLAY = {
   playTrack(ev) {
+    PLAY.btnToggle() 
     if (!APP.audio.paused) return
     APP.audio.play()
+  },
+  btnToggle(){ 
+    APP.btnPause.style.display='inline'
+    APP.btnPlay.style.display='none'
   }
 }
 
 /* For anything related to pause button and pausing track */
 const PAUSE = {
   pauseTrack(ev) {
+    PAUSE.btnToggle() 
     APP.audio.pause()
+  },
+  btnToggle(){
+    APP.btnPlay.style.display='inline'
+    APP.btnPause.style.display='none'
   }
 }
 
 /* For anything related to stop button and stopping track */
 const STOP = {
   stopTrack(ev) {
+    PAUSE.btnToggle()
     APP.audio.pause()
     APP.audio.currentTime = 0
   }
