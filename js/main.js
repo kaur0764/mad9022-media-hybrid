@@ -25,6 +25,7 @@ const PLAYING = {
   trackPlaying(){
     APP.audio.src = TRACKS[APP.currentTrack].src
     VISUAL.changeThumbnail()
+    VISUAL.changeTrackInfo()
   }
 }
 
@@ -96,6 +97,12 @@ const VISUAL = {
     let img = document.querySelector('#visual img')
     img.src = TRACKS[APP.currentTrack].img 
     img.alt = TRACKS[APP.currentTrack].title
+  },
+  changeTrackInfo(){
+    let trackName = document.querySelector('#visual h2')
+    let artistName = document.querySelector('#visual p')
+    trackName.innerHTML=TRACKS[APP.currentTrack].title
+    artistName.innerHTML=TRACKS[APP.currentTrack].artist
   }
 }
 

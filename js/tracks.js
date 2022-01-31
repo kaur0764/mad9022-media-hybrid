@@ -1,7 +1,7 @@
 const TRACKS = [
   {
     artist: 'ItsWatR',
-    title: 'Let-it-g',
+    title: 'Let-it-go',
     src: 'media/let-it-go.mp3',
     img: 'media/let-it-go.jpg'
   },
