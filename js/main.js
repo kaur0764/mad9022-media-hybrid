@@ -24,6 +24,7 @@ const APP = {
 const PLAYING = {
   trackPlaying(){
     APP.audio.src = TRACKS[APP.currentTrack].src
+    VISUAL.changeThumbnail()
   }
 }
 
@@ -34,7 +35,7 @@ const TIME = {
     let totalSec = ev.target.duration
     totalTime.innerHTML = TIME.convertTime(totalSec)
   },
-  convertTime(time){ //Converts seconds to minute and seconds
+  convertTime(time){ //Converts seconds to minutes and seconds
     let minutes = Math.floor(time / 60).toString()
     let seconds = Math.floor(time % 60).toString()
     return`${minutes.padStart(2,0)}:${seconds.padStart(2,0)}`
@@ -86,6 +87,15 @@ const STOP = {
     PAUSE.btnToggle()
     APP.audio.pause()
     APP.audio.currentTime = 0
+  }
+}
+
+/* For anything related to Visuals */
+const VISUAL = {
+  changeThumbnail(){
+    let img = document.querySelector('#visual img')
+    img.src = TRACKS[APP.currentTrack].img 
+    img.alt = TRACKS[APP.currentTrack].title
   }
 }
 
