@@ -192,6 +192,11 @@ section{
   border-radius: 1rem;
 }
 
+progress[value]::-webkit-progress-value {
+  background-color: var(--color-primary-dark);
+  border-radius: 1rem;
+}
+
 .audio-time{
   display: flex;
   justify-content: space-between;

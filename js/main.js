@@ -42,6 +42,16 @@ const TIME = {
   changeCurrentTime(){ 
     let currentTime = document.querySelector('.current-time')  
     currentTime.innerHTML=TIME.convertTime(APP.audio.currentTime)
+    PROGRESS.progress()
+  }
+}
+
+/* For anything related to progress bar */
+const PROGRESS = { 
+  progress(){
+    let progressBar = document.querySelector('.progress-bar')
+    let value = (APP.audio.currentTime / APP.audio.duration)*100
+    progressBar.setAttribute("value", value)
   }
 }
 
