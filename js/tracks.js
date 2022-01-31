@@ -54,3 +54,5 @@ const TRACKS = [
     img: 'media/future-bass.jpg'
   }
 ]
+
+export default TRACKS;
