@@ -2,11 +2,19 @@ import TRACKS from "./tracks.js";
 
 const APP = {
   audio: document.getElementById('player-audio'),
+  player: document.getElementById('player'),
+  btnPlay: document.getElementById('btnPlayArrow'),
+  btnPause: document.getElementById('btnPause'),
+  btnStop: document.getElementById('btnStop'),
   currentTrack: 0,
+
   init : () => { 
     /* Adding event listeners */
     APP.audio.addEventListener('durationchange', TIME.changeTotalTime) 
-    
+    APP.btnPlay.addEventListener('click', PLAY.playTrack);  
+    APP.btnPause.addEventListener('click', PAUSE.pauseTrack);
+    APP.btnStop.addEventListener('click', STOP.stopTrack);
+
     PLAYING.trackPlaying()
   }
 }
@@ -29,6 +37,29 @@ const TIME = {
     let minutes = Math.floor(time / 60).toString()
     let seconds = Math.floor(time % 60).toString()
     return`${minutes.padStart(2,0)}:${seconds.padStart(2,0)}`
+  }
+}
+
+/* For anything related to play button and playing track */
+const PLAY = {
+  playTrack(ev) {
+    if (!APP.audio.paused) return
+    APP.audio.play()
+  }
+}
+
+/* For anything related to pause button and pausing track */
+const PAUSE = {
+  pauseTrack(ev) {
+    APP.audio.pause()
+  }
+}
+
+/* For anything related to stop button and stopping track */
+const STOP = {
+  stopTrack(ev) {
+    APP.audio.pause()
+    APP.audio.currentTime = 0
   }
 }
 
