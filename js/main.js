@@ -26,6 +26,7 @@ const PLAYING = {
     APP.audio.src = TRACKS[APP.currentTrack].src
     VISUAL.changeThumbnail()
     VISUAL.changeTrackInfo()
+    ANIMATION.addActive()
   }
 }
 
@@ -103,6 +104,17 @@ const VISUAL = {
     let artistName = document.querySelector('#visual p')
     trackName.innerHTML=TRACKS[APP.currentTrack].title
     artistName.innerHTML=TRACKS[APP.currentTrack].artist
+  }
+}
+
+/* For anything related to player area and playlist area animation */
+const ANIMATION = {
+  addActive(){
+    let activeLi = document.querySelector('.active')
+    activeLi.classList.remove('active')
+    let img = document.querySelector(`li img[src="./${TRACKS[APP.currentTrack].img}"]`)
+    let li = img.parentElement
+    li.classList.add('active')
   }
 }
 
