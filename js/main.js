@@ -11,9 +11,10 @@ const APP = {
   init : () => { 
     /* Adding event listeners */
     APP.audio.addEventListener('durationchange', TIME.changeTotalTime) 
-    APP.btnPlay.addEventListener('click', PLAY.playTrack);  
-    APP.btnPause.addEventListener('click', PAUSE.pauseTrack);
-    APP.btnStop.addEventListener('click', STOP.stopTrack);
+    APP.audio.addEventListener('timeupdate', TIME.changeCurrentTime)
+    APP.btnPlay.addEventListener('click', PLAY.playTrack)
+    APP.btnPause.addEventListener('click', PAUSE.pauseTrack)
+    APP.btnStop.addEventListener('click', STOP.stopTrack)
 
     PLAYING.trackPlaying()
   }
@@ -33,10 +34,14 @@ const TIME = {
     let totalSec = ev.target.duration
     totalTime.innerHTML = TIME.convertTime(totalSec)
   },
-  convertTime(time){
+  convertTime(time){ //Converts seconds to minute and seconds
     let minutes = Math.floor(time / 60).toString()
     let seconds = Math.floor(time % 60).toString()
     return`${minutes.padStart(2,0)}:${seconds.padStart(2,0)}`
+  },
+  changeCurrentTime(){ 
+    let currentTime = document.querySelector('.current-time')  
+    currentTime.innerHTML=TIME.convertTime(APP.audio.currentTime)
   }
 }
 
