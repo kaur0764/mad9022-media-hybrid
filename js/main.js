@@ -21,6 +21,7 @@ const APP = {
     APP.audio.addEventListener('durationchange', TIME.changeTotalTime) 
     APP.audio.addEventListener('timeupdate', TIME.changeCurrentTime)
     document.querySelector('#controls').addEventListener('click',APP.handleButtons)
+    document.querySelector('#playlist-area').addEventListener('click',APP.handleListItems)
   },
   handleButtons: (ev) => {
     let target = ev.target
@@ -35,6 +36,17 @@ const APP = {
       if(btn.id==='btnStop'){
         STOP.stopTrack()
       }
+    }
+  },
+
+  handleListItems: (ev) =>{
+    let target = ev.target
+    let li = target.closest('li')
+    if(li){
+    ANIMATION.addActive(li)
+    APP.currentTrack = li.dataset.number
+    PLAYING.trackPlaying()
+    PLAY.playTrack()
     }
   },
 
@@ -149,11 +161,9 @@ const VISUAL = {
 
 /* For anything related to player area and playlist area animation */
 const ANIMATION = {
-  addActive(){
+  addActive(li){
     let activeLi = document.querySelector('.active')
     activeLi.classList.remove('active')
-    let img = document.querySelector(`li img[src="./${TRACKS[APP.currentTrack].img}"]`)
-    let li = img.parentElement
     li.classList.add('active')
   },
   startAnimations(){
