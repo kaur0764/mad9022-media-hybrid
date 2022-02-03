@@ -14,14 +14,16 @@ const APP = {
     APP.btnPlay = document.getElementById('btnPlayArrow')
     APP.btnPause = document.getElementById('btnPause')
     APP.btnStop = document.getElementById('btnStop')
-    /* Adding event listeners */
+
+    APP.addEventListeners()
+    PLAYING.trackPlaying()
+  },
+  addEventListeners: () => {
     APP.audio.addEventListener('durationchange', TIME.changeTotalTime) 
     APP.audio.addEventListener('timeupdate', TIME.changeCurrentTime)
     APP.btnPlay.addEventListener('click', PLAY.playTrack)
     APP.btnPause.addEventListener('click', PAUSE.pauseTrack)
-    APP.btnStop.addEventListener('click', STOP.stopTrack)
-
-    PLAYING.trackPlaying()
+    APP.btnStop.addEventListener('click', STOP.stopTrack)  
   }
 }
 
