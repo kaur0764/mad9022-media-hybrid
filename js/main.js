@@ -5,7 +5,6 @@ const APP = {
   player: null, 
   btnPlay: null, 
   btnPause: null, 
-  btnStop: null,
   currentTrack: 0,
 
   init : () => { 
@@ -13,7 +12,6 @@ const APP = {
     APP.player = document.getElementById('player') 
     APP.btnPlay = document.getElementById('btnPlayArrow')
     APP.btnPause = document.getElementById('btnPause')
-    APP.btnStop = document.getElementById('btnStop')
 
     APP.addEventListeners()
     PLAYING.trackPlaying()
@@ -21,9 +19,22 @@ const APP = {
   addEventListeners: () => {
     APP.audio.addEventListener('durationchange', TIME.changeTotalTime) 
     APP.audio.addEventListener('timeupdate', TIME.changeCurrentTime)
-    APP.btnPlay.addEventListener('click', PLAY.playTrack)
-    APP.btnPause.addEventListener('click', PAUSE.pauseTrack)
-    APP.btnStop.addEventListener('click', STOP.stopTrack)  
+    document.querySelector('#controls').addEventListener('click',APP.handleButtons)
+  },
+  handleButtons: (ev) => {
+    let target = ev.target
+    let btn = target.closest('.buttons')
+    if(btn){
+      if(btn.id==='btnPlayArrow'){
+        PLAY.playTrack()
+      }
+      if(btn.id==='btnPause'){
+        PAUSE.pauseTrack()
+      }
+      if(btn.id==='btnStop'){
+        STOP.stopTrack()
+      }
+    }
   }
 }
 
