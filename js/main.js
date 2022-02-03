@@ -14,6 +14,7 @@ const APP = {
     APP.btnPause = document.getElementById('btnPause')
 
     APP.addEventListeners()
+    APP.addPlaylist()
     PLAYING.trackPlaying()
   },
   addEventListeners: () => {
@@ -35,6 +36,25 @@ const APP = {
         STOP.stopTrack()
       }
     }
+  },
+
+  addPlaylist: () => {
+    let ol = document.querySelector('ol')
+    let html = TRACKS.map( (track, index)=> {
+    let li = document.createElement('li')
+    let img = document.createElement('img')
+    let p = document.createElement('p')
+    img.src = track.img 
+    img.alt = track.title
+    p.innerHTML=`${track.title}<br>${track.artist}`
+    li.append(img)
+    li.append(p)
+    li.setAttribute('data-number', index)
+    return li
+    })
+    ol.append(...html)
+    let firstLi = document.querySelector('#playlist-area li')
+    firstLi.classList.add('active')
   }
 }
 
@@ -44,7 +64,6 @@ const PLAYING = {
     APP.audio.src = TRACKS[APP.currentTrack].src
     VISUAL.changeThumbnail()
     VISUAL.changeTrackInfo()
-    ANIMATION.addActive()
   }
 }
 
