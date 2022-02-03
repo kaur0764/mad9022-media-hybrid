@@ -1,14 +1,19 @@
 import TRACKS from "./tracks.js"; 
 
 const APP = {
-  audio: document.getElementById('player-audio'),
-  player: document.getElementById('player'),
-  btnPlay: document.getElementById('btnPlayArrow'),
-  btnPause: document.getElementById('btnPause'),
-  btnStop: document.getElementById('btnStop'),
+  audio: null, 
+  player: null, 
+  btnPlay: null, 
+  btnPause: null, 
+  btnStop: null,
   currentTrack: 0,
 
   init : () => { 
+    APP.audio = document.getElementById('player-audio')  
+    APP.player = document.getElementById('player') 
+    APP.btnPlay = document.getElementById('btnPlayArrow')
+    APP.btnPause = document.getElementById('btnPause')
+    APP.btnStop = document.getElementById('btnStop')
     /* Adding event listeners */
     APP.audio.addEventListener('durationchange', TIME.changeTotalTime) 
     APP.audio.addEventListener('timeupdate', TIME.changeCurrentTime)
