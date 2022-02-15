@@ -20,6 +20,7 @@ const APP = {
   addEventListeners: () => {
     APP.audio.addEventListener('durationchange', TIME.changeTotalTime) 
     APP.audio.addEventListener('timeupdate', TIME.changeCurrentTime)
+    APP.audio.addEventListener('ended', NEXT.nextTrack)
     document.querySelector('#controls').addEventListener('click',APP.handleButtons)
     document.querySelector('#playlist-area').addEventListener('click',APP.handleListItems)
   },
@@ -41,6 +42,12 @@ const APP = {
       }
       if(btn.id==='btnSkipNext'){  
         NEXT.nextTrack()
+      }
+      if(btn.id==='btnReplay10'){ 
+        REPLAY.replayTenTrack()  
+      }
+      if(btn.id==='btnForward10'){
+        FORWARD.forwardTenTrack()
       }
     }
   },
@@ -184,6 +191,27 @@ const NEXT = {
     if(APP.currentTrack>=TRACKS.length)
     {
       APP.currentTrack = 0
+    }
+  }
+}
+
+/* For anything related to replay10 button */
+const REPLAY = {
+  replayTenTrack(ev) {
+    APP.audio.currentTime -= 10
+    if(APP.audio.currentTime<0){
+      APP.audio.currentTime = 0
+    }
+  }
+}
+
+/* For anything related to forward10 button */
+const FORWARD = {
+  forwardTenTrack(ev) {
+    APP.audio.currentTime += 10
+    let totalTime = APP.audio.totalTime
+    if(APP.audio.currentTime> totalTime){
+      APP.audio.currentTime = totalTime
     }
   }
 }
