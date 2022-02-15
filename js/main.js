@@ -154,15 +154,18 @@ const STOP = {
 const PREV = {
   prevTrack(ev) {
     STOP.stopTrack()
+    PREV.decrementCurrentTrack()
+    let li = document.querySelector(`li[data-number = "${APP.currentTrack}"]`)
+    ANIMATION.addActive(li)
+    PLAYING.trackPlaying()
+    PLAY.playTrack()
+  },
+  decrementCurrentTrack(){
     APP.currentTrack--
     if(APP.currentTrack<0)
     {
       APP.currentTrack = TRACKS.length-1
     } 
-    let li = document.querySelector(`li[data-number = "${APP.currentTrack}"]`)
-    ANIMATION.addActive(li)
-    PLAYING.trackPlaying()
-    PLAY.playTrack()
   }
 }
 
@@ -170,15 +173,18 @@ const PREV = {
 const NEXT = {
   nextTrack(ev) {
     STOP.stopTrack()
-    APP.currentTrack++
-    if(APP.currentTrack>=TRACKS.length)
-    {
-      APP.currentTrack = 0
-    } 
+    NEXT.incrementCurrentTrack()
     let li = document.querySelector(`li[data-number = "${APP.currentTrack}"]`)
     ANIMATION.addActive(li)
     PLAYING.trackPlaying()
     PLAY.playTrack()
+  },
+  incrementCurrentTrack(){
+    APP.currentTrack++
+    if(APP.currentTrack>=TRACKS.length)
+    {
+      APP.currentTrack = 0
+    }
   }
 }
 
