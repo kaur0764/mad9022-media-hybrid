@@ -178,6 +178,11 @@ section{
   max-height: 15rem;
   margin-bottom: 1.5rem;
 }
+#visual h2, 
+#visual p{
+  margin: 0;
+}
+
 
 .progress-bar{
   width:calc(100% - 2rem); 
