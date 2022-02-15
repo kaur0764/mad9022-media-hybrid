@@ -36,6 +36,12 @@ const APP = {
       if(btn.id==='btnStop'){
         STOP.stopTrack()
       }
+      if(btn.id==='btnSkipPrevious'){  
+        PREV.prevTrack()  
+      }
+      if(btn.id==='btnSkipNext'){  
+        NEXT.nextTrack()
+      }
     }
   },
 
@@ -141,6 +147,38 @@ const STOP = {
     APP.audio.pause()
     APP.audio.currentTime = 0
     ANIMATION.stopAnimations()
+  }
+}
+
+/* For anything related to skip_previous button */
+const PREV = {
+  prevTrack(ev) {
+    STOP.stopTrack()
+    APP.currentTrack--
+    if(APP.currentTrack<0)
+    {
+      APP.currentTrack = TRACKS.length-1
+    } 
+    let li = document.querySelector(`li[data-number = "${APP.currentTrack}"]`)
+    ANIMATION.addActive(li)
+    PLAYING.trackPlaying()
+    PLAY.playTrack()
+  }
+}
+
+/* For anything related to skip_next button */
+const NEXT = {
+  nextTrack(ev) {
+    STOP.stopTrack()
+    APP.currentTrack++
+    if(APP.currentTrack>=TRACKS.length)
+    {
+      APP.currentTrack = 0
+    } 
+    let li = document.querySelector(`li[data-number = "${APP.currentTrack}"]`)
+    ANIMATION.addActive(li)
+    PLAYING.trackPlaying()
+    PLAY.playTrack()
   }
 }
 
