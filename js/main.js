@@ -92,6 +92,8 @@ const PLAYING = {
   }
 }
 
+/* ---------------- Time --------------- */
+
 /* For anything related to Time */
 const TIME = {
   changeTotalTime(ev){
@@ -111,6 +113,8 @@ const TIME = {
   }
 }
 
+/* ---------------- Progress --------------- */
+
 /* For anything related to progress bar */
 const PROGRESS = { 
   progress(){
@@ -119,6 +123,8 @@ const PROGRESS = {
     progressBar.setAttribute("value", value)
   }
 }
+
+/* ----------------- Buttons --------------- */
 
 /* For anything related to play button and playing track */
 const PLAY = {
@@ -209,12 +215,14 @@ const REPLAY = {
 const FORWARD = {
   forwardTenTrack(ev) {
     APP.audio.currentTime += 10
-    let totalTime = APP.audio.totalTime
+    let totalTime = APP.audio.duration
     if(APP.audio.currentTime> totalTime){
       APP.audio.currentTime = totalTime
     }
   }
 }
+
+/* --------------- Visuals and Animation -------------- */
 
 /* For anything related to Visuals */
 const VISUAL = {
