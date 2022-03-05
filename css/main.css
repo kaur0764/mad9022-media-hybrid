@@ -190,6 +190,7 @@ section{
   background-color: #eee;
   border-radius: 1rem;
   margin: 0 1rem;
+  border: 0;
 }
 
 .progress-bar::-webkit-progress-bar {
@@ -198,6 +199,11 @@ section{
 }
 
 progress[value]::-webkit-progress-value {
+  background-color: var(--color-primary-dark);
+  border-radius: 1rem;
+}
+
+.progress-bar::-moz-progress-bar {
   background-color: var(--color-primary-dark);
   border-radius: 1rem;
 }
