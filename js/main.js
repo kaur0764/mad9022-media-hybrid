@@ -64,7 +64,7 @@ const APP = {
   },
 
   addPlaylist: () => {
-    let ol = document.querySelector('ol')
+    let ol = document.querySelector('#playlist-area ol')
     let html = TRACKS.map( (track, index)=> {
     let li = document.createElement('li')
     let img = document.createElement('img')
