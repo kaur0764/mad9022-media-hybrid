@@ -178,12 +178,34 @@ section{
   max-height: 15rem;
   margin-bottom: 1.5rem;
 }
+#visual h2, 
+#visual p{
+  margin: 0;
+}
+
 
 .progress-bar{
+  width:calc(100% - 2rem); 
   height: 0.225rem;
   background-color: #eee;
   border-radius: 1rem;
   margin: 0 1rem;
+  border: 0;
+}
+
+.progress-bar::-webkit-progress-bar {
+  background-color: #eee;
+  border-radius: 1rem;
+}
+
+progress[value]::-webkit-progress-value {
+  background-color: var(--color-primary-dark);
+  border-radius: 1rem;
+}
+
+.progress-bar::-moz-progress-bar {
+  background-color: var(--color-primary-dark);
+  border-radius: 1rem;
 }
 
 .audio-time{
@@ -269,3 +291,4 @@ li img{
 #player-audio{
   display: none;
 }
+

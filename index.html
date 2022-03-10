@@ -16,18 +16,18 @@
     <section id="player-area">
       <div id="player" class="is-playing">
         <div id="visual">
-          <img src="./media/let-it-go.jpg" alt="let it go" />
+          <img src="" alt="" />
           <div id="audio-animation">
           </div>
-          <h2>Let it go</h2>
-          <p>ItsWatR</p>
+          <h2>Track Name</h2>
+          <p>Artist name</p>
         </div>
         <div id="controls">
-          <div class="progress-bar"></div>
-          <p class="audio-time">
-            <span class="current-time">00:00</span>
-            <span class="total-length">00:00</span>
-          </p>
+          <progress class="progress-bar" max="100" value="0"></progress>
+          <div class="audio-time">
+            <time class="current-time">00:00</time>
+            <time class="total-length">00:00</time>
+          </div>
           <button id="btnSkipPrevious" class="buttons">
             <span class="material-icons">skip_previous</span>
           </button>
@@ -54,75 +54,11 @@
     </section>
     <section id="playlist-area">
       <ol>
-        <li class="active">
-          <img src="./media/let-it-go.jpg" alt="Let it go">
-          <p>
-            Let it go<br>
-            ItsWatR
-          </p>
-        </li>
-        <li>
-          <img src="./media/hidden-place.jpg" alt="Hidden place">
-          <p>
-            Hidden place<br>
-            madirfan
-          </p>
-        </li>
-        <li>
-          <img src="./media/moment.jpg" alt="Moment">
-          <p>
-            Moment<br>
-            SergeQuadrado
-          </p>
-        </li>
-        <li>
-          <img src="./media/town.jpg" alt="Town">
-          <p>
-            Town<br>
-            BeCorbal
-          </p>
-        </li>
-        <li>
-          <img src="./media/for-me.jpg" alt="For me">
-          <p>
-            For me<br>
-            BeCorbal
-          </p>
-        </li>
-        <li>
-          <img src="./media/piano-moment.jpg" alt="Piano moment">
-          <p>
-            Piano moment<br>
-            ZakharValaha
-          </p>
-        </li>
-        <li>
-          <img src="./media/cali.jpg" alt="Cali">
-          <p>
-            Cali<br>
-            ItsWatR
-          </p>
-        </li>
-        <li>
-          <img src="./media/fantasy-magic.jpg" alt="Fantasy magic">
-          <p>
-            Fantasy magic<br>
-            LiteSaturation
-          </p>
-        </li>
-        <li>
-          <img src="./media/future-bass.jpg" alt="Future bass">
-          <p>
-            Future bass<br>
-            lvymusic
-          </p>
-        </li>
       </ol>
     </section>
   </main>
   <audio id="player-audio" controls>
-    <source src='' type='audio/mpeg'/>
   </audio>
-  <script src="./js/main.js"></script> 
+  <script src="./js/main.js" type="module"></script> 
 </body>
 </html>
