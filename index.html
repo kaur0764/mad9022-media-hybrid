@@ -1,64 +1,70 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Media player</title>
-  <link rel="stylesheet" href="./css/main.css">
-  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"/>
-</head>
-<body>
-  <header class="container" role="banner">
-    <h1>kaur0764</h1>
-  </header>
-  <main class="container" role="main">
-    <section id="player-area">
-      <div id="player" class="is-playing">
-        <div id="visual">
-          <img src="" alt="" />
-          <div id="audio-animation">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Media player</title>
+    <link rel="stylesheet" href="./css/main.css" />
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <header class="container" role="banner">
+      <h1>kaur0764</h1>
+    </header>
+    <main class="container" role="main">
+      <section id="player-area">
+        <div id="player">
+          <div id="visual">
+            <img src="" alt="" />
+            <div id="audio-animation">
+              <div class="wave wave-1"></div>
+              <div class="wave wave-2"></div>
+              <div class="wave wave-3"></div>
+              <div class="wave wave-4"></div>
+              <div class="wave wave-5"></div>
+            </div>
+            <h2>Track Name</h2>
+            <p>Artist name</p>
           </div>
-          <h2>Track Name</h2>
-          <p>Artist name</p>
-        </div>
-        <div id="controls">
-          <progress class="progress-bar" max="100" value="0"></progress>
-          <div class="audio-time">
-            <time class="current-time">00:00</time>
-            <time class="total-length">00:00</time>
+          <div id="controls">
+            <progress class="progress-bar" max="100" value="0"></progress>
+            <div class="audio-time">
+              <time class="current-time">00:00</time>
+              <time class="total-length">00:00</time>
+            </div>
+            <button id="btnSkipPrevious" class="buttons">
+              <span class="material-icons">skip_previous</span>
+            </button>
+            <button id="btnReplay10" class="buttons">
+              <span class="material-icons">replay_10</span>
+            </button>
+            <button id="btnPlayArrow" class="buttons">
+              <span class="material-icons">play_arrow</span>
+            </button>
+            <button id="btnPause" class="buttons">
+              <span class="material-icons">pause</span>
+            </button>
+            <button id="btnStop" class="buttons">
+              <span class="material-icons">stop</span>
+            </button>
+            <button id="btnForward10" class="buttons">
+              <span class="material-icons">forward_10</span>
+            </button>
+            <button id="btnSkipNext" class="buttons">
+              <span class="material-icons">skip_next</span>
+            </button>
           </div>
-          <button id="btnSkipPrevious" class="buttons">
-            <span class="material-icons">skip_previous</span>
-          </button>
-          <button id="btnReplay10" class="buttons">
-            <span class="material-icons">replay_10</span>
-          </button>
-          <button id="btnPlayArrow" class="buttons">
-            <span class="material-icons">play_arrow</span>
-          </button>
-          <button id="btnPause" class="buttons">
-            <span class="material-icons">pause</span>
-          </button>
-          <button id="btnStop" class="buttons">
-            <span class="material-icons">stop</span>
-          </button>
-          <button id="btnForward10" class="buttons">
-            <span class="material-icons">forward_10</span>
-          </button>
-          <button id="btnSkipNext" class="buttons">
-            <span class="material-icons">skip_next</span>
-          </button>
         </div>
-      </div>
-    </section>
-    <section id="playlist-area">
-      <ol>
-      </ol>
-    </section>
-  </main>
-  <audio id="player-audio" controls>
-  </audio>
-  <script src="./js/main.js" type="module"></script> 
-</body>
+      </section>
+      <section id="playlist-area">
+        <ol></ol>
+      </section>
+    </main>
+    <audio id="player-audio" controls></audio>
+    <script src="./js/main.js" type="module"></script>
+  </body>
 </html>
