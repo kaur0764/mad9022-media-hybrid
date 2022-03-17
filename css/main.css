@@ -307,11 +307,21 @@ li img {
   width: 65px;
   border-radius: 25%;
   background: #fff;
-  transition: 4s ease;
   position: absolute;
   top: 30%;
   left: 50%;
   transform: translateX(-50%);
+}
+
+#player .wave-start {
+  height: 120px;
+  width: 120px;
+}
+
+#player.is-playing .wave.wave-start {
+  animation: waves 1.5s linear;
+  width: 100px;
+  height: 100px;
 }
 
 #player.is-playing .wave {
