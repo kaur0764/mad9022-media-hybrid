@@ -320,8 +320,6 @@ li img {
 
 #player.is-playing .wave.wave-start {
   animation: waves 1.5s linear;
-  width: 100px;
-  height: 100px;
 }
 
 #player.is-playing .wave {
