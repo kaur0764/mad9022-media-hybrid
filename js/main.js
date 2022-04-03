@@ -225,6 +225,22 @@ const FORWARD = {
   },
 };
 
+/* For anything related to Mute feature */
+const MUTE = {
+  muteTrack(ev) {
+    let muteBtn = document.querySelector("#btnMute span");
+    if (APP.audio.muted) {
+      APP.audio.muted = false;
+      muteBtn.innerHTML = "volume_up";
+      console.log(APP.audio.muted);
+    } else {
+      APP.audio.muted = true;
+      muteBtn.innerHTML = "volume_off";
+      console.log(APP.audio.muted);
+    }
+  },
+};
+
 /* --------------- Visuals and Animation -------------- */
 
 /* For anything related to Visuals */
