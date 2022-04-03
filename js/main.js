@@ -27,6 +27,9 @@ const APP = {
     document
       .querySelector("#playlist-area")
       .addEventListener("click", APP.handleListItems);
+    document
+      .querySelector("#btnMute")
+      .addEventListener("click", MUTE.muteTrack);
   },
   handleButtons: (ev) => {
     let target = ev.target;
@@ -232,11 +235,9 @@ const MUTE = {
     if (APP.audio.muted) {
       APP.audio.muted = false;
       muteBtn.innerHTML = "volume_up";
-      console.log(APP.audio.muted);
     } else {
       APP.audio.muted = true;
       muteBtn.innerHTML = "volume_off";
-      console.log(APP.audio.muted);
     }
   },
 };
