@@ -1,30 +1,32 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&display=swap");
 
-html{
-  font-family: 'Montserrat', sans-serif;
+html {
+  font-family: "Montserrat", sans-serif;
   line-height: 1.5;
   box-sizing: border-box;
 }
 
-*, *::before, *::after{
+*,
+*::before,
+*::after {
   box-sizing: inherit;
 }
 
-body{
+body {
   margin: 0px;
 }
 
 /* --------------- Type hierarchy --------------- */
 
-h1, 
-h2, 
-h3, 
-h4, 
+h1,
+h2,
+h3,
+h4,
 h5,
 h6,
 p,
 ul,
-ol{
+ol {
   margin: 0 0 1.5rem;
 }
 
@@ -56,91 +58,88 @@ small {
   font-size: 0.889rem;
 }
 
-@media only screen and (min-width: 45em){
-
+@media only screen and (min-width: 45em) {
   /* ---------- Tablet ---------- */
 
-  h1{
-  font-size: 2.488rem;
+  h1 {
+    font-size: 2.488rem;
   }
 
-  h2{
-      font-size: 2.074rem;
+  h2 {
+    font-size: 2.074rem;
   }
 
-  h3{
-      font-size: 1.728rem;
+  h3 {
+    font-size: 1.728rem;
   }
 
-  h4{
-      font-size: 1.44rem;
+  h4 {
+    font-size: 1.44rem;
   }
 
-  h5{
-      font-size: 1.2rem;
+  h5 {
+    font-size: 1.2rem;
   }
 
-  small{
-      font-size: 0.833rem;}
-
+  small {
+    font-size: 0.833rem;
+  }
 }
 
-@media only screen and (min-width: 60em){  
-
+@media only screen and (min-width: 60em) {
   /* ---------- Desktop ---------- */
 
-  h1{
-      font-size: 3.052rem;
+  h1 {
+    font-size: 3.052rem;
   }
 
-  h2{
-      font-size: 2.441rem;
+  h2 {
+    font-size: 2.441rem;
   }
 
-  h3{
-      font-size: 1.953rem;
+  h3 {
+    font-size: 1.953rem;
   }
 
-  h4{
-      font-size: 1.563rem;
+  h4 {
+    font-size: 1.563rem;
   }
 
-  h5{
-      font-size: 1.25rem;
+  h5 {
+    font-size: 1.25rem;
   }
 
-  small{
-      font-size: 0.8rem;
+  small {
+    font-size: 0.8rem;
   }
-
 }
 
 /* ----------------- Variables ----------------- */
 
-:root{
-  --color-primary:#6D51A6;
-  --color-primary-light:#a081dd;
+:root {
+  --color-primary: #6d51a6;
+  --color-primary-light: #a081dd;
   --color-primary-dark: #553588;
-} 
+}
 
 /* ----------------- Layout ----------------- */
-body{
+body {
   background-color: var(--color-primary);
   color: #fff;
 }
 
 @media only screen and (min-width: 45em) {
-  main{
+  main {
     display: grid;
-    grid-template-columns: 1fr 1fr ;
+    grid-template-columns: 1fr 1fr;
     gap: 1.5rem;
   }
-  main.container{ 
+  main.container {
     padding-top: 6rem;
   }
 }
 
-.container{
+.container {
   width: 100%;
   max-width: 90em;
   min-width: 20em;
@@ -149,43 +148,50 @@ body{
   padding-bottom: 0;
 }
 
-header h1{
+header h1 {
   margin: 0;
 }
 
-section{
+section {
   padding-bottom: 1.5rem;
 }
 
 /* --------------- Media Player --------------- */
 
-#player-area{  
+#player-area {
   color: #fff;
   border-radius: 0.5rem;
   text-align: center;
   padding-top: 1rem;
-  background-image: linear-gradient(to bottom,rgba(255, 255, 255, 0.262) 20%, transparent);
+  background-image: linear-gradient(
+    to bottom,
+    rgba(255, 255, 255, 0.262) 20%,
+    transparent
+  );
   height: max-content;
 }
 
-#visual{
+#visual {
   padding: 1rem;
   padding-bottom: 0;
+  position: relative;
+  overflow: hidden;
 }
 
-#visual img{
+#visual img {
   box-shadow: 0 4px 10px #0006;
   max-height: 15rem;
   margin-bottom: 1.5rem;
+  position: relative;
+  z-index: 100;
 }
-#visual h2, 
-#visual p{
+#visual h2,
+#visual p {
   margin: 0;
 }
 
-
-.progress-bar{
-  width:calc(100% - 2rem); 
+.progress-bar {
+  width: calc(100% - 2rem);
   height: 0.225rem;
   background-color: #eee;
   border-radius: 1rem;
@@ -208,87 +214,160 @@ progress[value]::-webkit-progress-value {
   border-radius: 1rem;
 }
 
-.audio-time{
+.audio-time {
   display: flex;
   justify-content: space-between;
   margin: 0 1rem;
 }
 
 @media only screen and (min-width: 48em) {
-  #visual img{
+  #visual img {
     max-height: 22rem;
   }
 }
 
 /* ------------ Buttons ------------- */
 
-.buttons{
-  background-color:transparent;
+.buttons {
+  background-color: transparent;
   border-color: transparent;
   color: #eee;
   border-radius: 50%;
   padding: 0.1rem;
 }
 
-.buttons .material-icons{
+.buttons .material-icons {
   font-size: 2rem;
 }
 
-#btnPlayArrow, #btnPause ,#btnStop{
+#btnPlayArrow,
+#btnPause,
+#btnStop {
   background-color: #eee;
   color: var(--color-primary-dark);
   padding: 0.3rem;
 }
 
-#btnPause{
-  display: none; 
+#btnPause {
+  display: none;
 }
 
 @media only screen and (min-width: 25em) {
-  .buttons{
+  .buttons {
     margin: 0 0.2rem;
   }
 }
 
 @media only screen and (min-width: 68em) {
-  .buttons{
+  .buttons {
     margin: 0 0.4rem;
   }
 }
 /* ----------------- Playlist ----------------- */
 
-ol{
-  padding:0;
+ol {
+  padding: 0;
   margin: 0;
   width: 100%;
   border-radius: 0.5rem;
 }
 
-ol li{
+ol li {
   display: flex;
   align-items: center;
-  gap:1rem;
-  background-color: rgba(255, 255, 255, 0.433); 
+  gap: 1rem;
+  background-color: rgba(255, 255, 255, 0.433);
   border-radius: 0.5rem;
   padding: 0.5rem 1rem;
   margin-bottom: 0.225rem;
 }
 
-ol li.active{
+ol li.active {
   background-color: #eee;
   color: var(--color-primary);
   box-shadow: 0 4px 10px #0006;
 }
 
-li img{
+li img {
   max-height: 3rem;
 }
 
-#playlist-area p{
+#playlist-area p {
   margin: 0;
 }
 
-#player-audio{
+#player-audio {
   display: none;
 }
 
+/* ------------- Animation ------------- */
+
+.wave {
+  height: 65px;
+  width: 65px;
+  border-radius: 25%;
+  background: #fff;
+  position: absolute;
+  top: 30%;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+#player .wave-start {
+  height: 120px;
+  width: 120px;
+}
+
+#player.is-playing .wave.wave-start {
+  animation: waves 1.5s linear;
+}
+
+#player.is-playing .wave {
+  animation: waves 3s linear infinite;
+}
+
+#player.is-playing .wave-2 {
+  animation-delay: 0.7s;
+}
+
+#player.is-playing .wave-3 {
+  animation-delay: 1.3s;
+}
+
+#player.is-playing .wave-4 {
+  animation-delay: 1.9s;
+}
+
+#player.is-playing .wave-5 {
+  animation-delay: 2.6s;
+}
+
+@keyframes waves {
+  0% {
+    border-radius: 25%;
+    transform: translateX(-50%) scale(1);
+    opacity: 1;
+  }
+  30% {
+    opacity: 0.5;
+  }
+  100% {
+    border-radius: 50%;
+    transform: translateX(-50%) scale(6.5);
+    opacity: 0;
+  }
+}
+
+@media only screen and (min-width: 25em) {
+  .wave {
+    height: 75px;
+    width: 75px;
+  }
+}
+
+@media only screen and (min-width: 33em) {
+  .wave {
+    height: 90px;
+    width: 90px;
+  }
+}
