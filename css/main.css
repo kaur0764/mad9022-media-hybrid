@@ -348,6 +348,14 @@ li img {
   animation-delay: 2.6s;
 }
 
+#player.is-playing .wave.wave-start.pause {
+  animation-play-state: paused;
+}
+
+#player.is-playing .wave.pause {
+  animation-play-state: paused;
+}
+
 @keyframes waves {
   0% {
     transform: translateX(-50%) scale(1);

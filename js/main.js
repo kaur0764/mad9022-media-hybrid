@@ -153,7 +153,7 @@ const PAUSE = {
   pauseTrack(ev) {
     PAUSE.btnToggle();
     APP.audio.pause();
-    ANIMATION.stopAnimations();
+    ANIMATION.pauseAnimations();
   },
   btnToggle() {
     APP.btnPlay.style.display = "inline";
@@ -269,7 +269,17 @@ const ANIMATION = {
   startAnimations() {
     if (!APP.audio.paused) {
       APP.player.classList.add("is-playing");
+      let animation = document.querySelectorAll(".wave");
+      animation.forEach((wave) => {
+        wave.classList.remove("pause");
+      });
     }
+  },
+  pauseAnimations() {
+    let animation = document.querySelectorAll(".wave");
+    animation.forEach((wave) => {
+      wave.classList.add("pause");
+    });
   },
   stopAnimations() {
     APP.player.classList.remove("is-playing");
